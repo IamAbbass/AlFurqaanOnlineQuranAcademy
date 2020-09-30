@@ -3161,4 +3161,9 @@ h6 {
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
 
+
+        .icons{
+          text-align: center !important;
+          color: #fff !important;
+        }
 /*# sourceMappingURL=main.css.map */
