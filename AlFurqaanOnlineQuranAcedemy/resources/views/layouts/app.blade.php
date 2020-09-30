@@ -39,27 +39,27 @@
   <header class="default-header">
     <nav class="navbar navbar-expand-lg  navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{{ route('index') }}">
           <img src="img/logo.png" alt="" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="lnr lnr-menu"></span>
+          <span class="lnr="><i class="fas fa-bars"></i></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
+            <li><a href="{{ route('index') }}">Home</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('courses') }}">Courses</a></li>
             <!-- Dropdown -->
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                 Pages
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="elements.html">Elements</a>
-                <a class="dropdown-item" href="course-details.html">Course Details</a>
+                <a class="dropdown-item" href="{{ route('elements') }}">Elements</a>
+                <a class="dropdown-item" href="{{ route('course.details') }}">Course Details</a>
               </div>
             </li>
             <li class="dropdown">
@@ -67,16 +67,18 @@
                 Blog
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
+                <a class="dropdown-item" href="{{ route('blog.home') }}">Blog Home</a>
+                <a class="dropdown-item" href="{{ route('blog.details') }}">Blog Details</a>
               </div>
             </li>
-            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="{{ route('contact') }}">Contacts</a></li>
 
             <li>
               <button class="search">
                 {{-- <span class="lnr lnr-magnifier" id="search"></span> --}}
-                <i class="fas fa-search"></i>
+                <span id="search">
+                    <i class="fas fa-search"></i>
+                </span>
             </button>
             </li>
           </ul>
@@ -88,77 +90,16 @@
         <form class="d-flex justify-content-between">
           <input type="text" class="form-control" id="search-input" placeholder="Search Here" />
           <button type="submit" class="btn"></button>
-          <span class="lnr lnr-cross" id="close-search" title="Close Search"></span>
+          <span class="icons mt-2" id="close-search" title="Close Search">
+            <i class="fas fa-times"></i>
+          </span>
         </form>
       </div>
     </div>
   </header>
   <!-- ================ End Header Area ================= -->
 
-  <!-- ================ start banner Area ================= -->
-  <section class="home-banner-area">
-    <div class="container">
-      <div class="row justify-content-center fullscreen align-items-center">
-        <div class="col-lg-5 col-md-8 home-banner-left">
-          <h1 class="text-white">
-            Take the first step <br />
-            to learn with us
-          </h1>
-          <p class="mx-auto text-white  mt-20 mb-40">
-            In the history of modern astronomy, there is probably no one
-            greater leap forward than the building and launch of the space
-            telescope known as the Hubble.
-          </p>
-        </div>
-        <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
-          <img class="img-fluid" src="img/header-img.png" alt="" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ================ End banner Area ================= -->
-
-  <!-- ================ Start Feature Area ================= -->
-  <section class="feature-area">
-    <div class="container-fluid">
-      <div class="feature-inner row">
-        <div class="col-lg-2 col-md-6">
-          <div class="feature-item d-flex">
-            <i class="ti-book"></i>
-            <div class="ml-20">
-              <h4>New Classes</h4>
-              <p>
-                In the history of modern astronomy, there is probably no one greater leap forward.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6">
-          <div class="feature-item d-flex">
-            <i class="ti-cup"></i>
-            <div class="ml-20">
-              <h4>Top Courses</h4>
-              <p>
-                In the history of modern astronomy, there is probably no one greater leap forward.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6">
-          <div class="feature-item d-flex border-right-0">
-            <i class="ti-desktop"></i>
-            <div class="ml-20">
-              <h4>Full E-Books</h4>
-              <p>
-                In the history of modern astronomy, there is probably no one greater leap forward.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ================ End Feature Area ================= -->
+  
 
   @yield('content')
 
@@ -223,7 +164,7 @@
 			<div class="footer-bottom row align-items-center">
 				<p class="footer-text m-0 col-lg-8 col-md-12">
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="far fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 				<div class="col-lg-4 col-md-12 footer-social">
 					{{-- <a href="#"><i class="fa fa-facebook"></i></a> 
